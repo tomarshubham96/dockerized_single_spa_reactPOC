@@ -1,0 +1,53 @@
+version: "3.8"
+services:
+  home: 
+    stdin_open: true
+    tty: true
+    image: home:latest
+    build:
+      context: ./home
+      dockerfile: Dockerfile-home
+    container_name: home-container
+    ports:
+      - "3001:3001"
+    environment: 
+      - CHOKIDAR_USEPOLLING=true
+
+  chart1: 
+    stdin_open: true
+    tty: true
+    image: chart1:latest
+    build:
+      context: ./chart1
+      dockerfile: Dockerfile-chart1
+    container_name: chart1-container
+    ports:
+      - "3002:3002"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  store:
+    stdin_open: true
+    tty: true
+    image: store:latest
+    build:
+      context: ./store
+      dockerfile: Dockerfile-store
+    container_name: store-container
+    ports:
+      - "3009:3009"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  header:
+    stdin_open: true
+    tty: true
+    image: header:latest
+    build:
+      context: ./header
+      dockerfile: Dockerfile-header
+    container_name: header-container
+    ports:
+      - "3004:3004"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
