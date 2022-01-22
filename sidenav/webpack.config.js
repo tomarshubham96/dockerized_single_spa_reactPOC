@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://localhost:3001/',
+    publicPath: 'http://localhost:3005/',
     path: path.resolve(process.cwd(), 'dist')
   },
 
@@ -35,28 +35,25 @@ module.exports = {
       {
         test: /\.md$/,
         loader: 'raw-loader'
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       }
     ]
   },
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'home',
-      library: { type: 'var', name: 'home' },
+      name: 'sidenav',
+      library: { type: 'var', name: 'sidenav' },
       filename: 'remoteEntry.js',
       remotes: {
-        header: 'header',
-        chart1: 'chart1',
-        chart2: 'chart2',
-        sidenav: 'sidenav',
-        tablecomp: 'tablecomp',
-        footer:'footer',
-        inputuser:'inputuser',
-        showuser:'showuser'
       },
       exposes: {
+        "./SideNav" : './src/SideNav'
       },
-      shared: []
+      shared: require("./package.json").dependencies,
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html'

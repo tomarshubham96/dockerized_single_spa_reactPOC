@@ -1,0 +1,5 @@
+node_modules
+Dockerfile-showuser
+.git
+.gitignore
+.dockerignore

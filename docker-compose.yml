@@ -26,6 +26,84 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
 
+  chart2: 
+    stdin_open: true
+    tty: true
+    image: chart2:latest
+    build:
+      context: ./chart2
+      dockerfile: Dockerfile-chart2
+    container_name: chart2-container
+    ports:
+      - "3003:3003"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  footer: 
+    stdin_open: true
+    tty: true
+    image: footer:latest
+    build:
+      context: ./footer
+      dockerfile: Dockerfile-footer
+    container_name: footer-container
+    ports:
+      - "3007:3007"
+    environment:
+      - CHOKIDAR_USEPOLLING=true  
+
+  header:
+    stdin_open: true
+    tty: true
+    image: header:latest
+    build:
+      context: ./header
+      dockerfile: Dockerfile-header
+    container_name: header-container
+    ports:
+      - "3004:3004"
+    environment:
+      - CHOKIDAR_USEPOLLING=true   
+
+  inputuser: 
+    stdin_open: true
+    tty: true
+    image: inputuser:latest
+    build:
+      context: ./inputuser
+      dockerfile: Dockerfile-inputuser
+    container_name: inputuser-container
+    ports:
+      - "3010:3010"
+    environment:
+      - CHOKIDAR_USEPOLLING=true 
+
+  showuser: 
+    stdin_open: true
+    tty: true
+    image: showuser:latest
+    build:
+      context: ./showuser
+      dockerfile: Dockerfile-showuser
+    container_name: showuser-container
+    ports:
+      - "3011:3011"
+    environment:
+      - CHOKIDAR_USEPOLLING=true     
+
+  sidenav: 
+    stdin_open: true
+    tty: true
+    image: sidenav:latest
+    build:
+      context: ./sidenav
+      dockerfile: Dockerfile-sidenav
+    container_name: sidenav-container
+    ports:
+      - "3005:3005"
+    environment:
+      - CHOKIDAR_USEPOLLING=true                       
+
   store:
     stdin_open: true
     tty: true
@@ -39,15 +117,17 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
 
-  header:
+  tablecomp: 
     stdin_open: true
     tty: true
-    image: header:latest
+    image: tablecomp:latest
     build:
-      context: ./header
-      dockerfile: Dockerfile-header
-    container_name: header-container
+      context: ./tablecomp
+      dockerfile: Dockerfile-tablecomp
+    container_name: tablecomp-container
     ports:
-      - "3004:3004"
+      - "3006:3006"
     environment:
-      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_USEPOLLING=true    
+
+  
