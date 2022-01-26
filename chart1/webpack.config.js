@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://localhost:3002/',
+    publicPath: 'http://chart1:3002/',
     path: path.resolve(process.cwd(), 'dist')
   },
 

@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://localhost:3001/',
+    publicPath: 'http://home:3001/',
     path: path.resolve(process.cwd(), 'dist')
   },
 
@@ -47,10 +47,7 @@ module.exports = {
       remotes: {
         header: 'header',
         chart1: 'chart1',
-        chart2: 'chart2',
         sidenav: 'sidenav',
-        tablecomp: 'tablecomp',
-        footer:'footer',
         inputuser:'inputuser',
         showuser:'showuser'
       },

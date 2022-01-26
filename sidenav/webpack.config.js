@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://localhost:3005/',
+    publicPath: 'http://sidenav:3005/',
     path: path.resolve(process.cwd(), 'dist')
   },
 

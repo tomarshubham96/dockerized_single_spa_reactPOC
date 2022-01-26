@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://localhost:3010/',
+    publicPath: 'http://inputuser:3010/',
     path: path.resolve(process.cwd(), 'dist')
   },
 

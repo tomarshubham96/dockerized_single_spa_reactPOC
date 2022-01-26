@@ -14,7 +14,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://localhost:3009/'
+    publicPath: 'http://store:3009/'
   },
 
   resolve: {
