@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://header:3004/',
+    publicPath: 'http://localhost:3004/',
     path: path.resolve(process.cwd(), 'dist')
   },
 
@@ -47,7 +47,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'header',
       library: { type: 'var', name: 'header' },
-      filename: 'remoteEntry.js',
+      filename: 'header.js',
       remotes: {
         store: 'store'
       },

@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://chart1:3002/',
+    publicPath: 'http://localhost:3002/',
     path: path.resolve(process.cwd(), 'dist')
   },
 
@@ -43,7 +43,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'chart1',
       library: { type: 'var', name: 'chart1' },
-      filename: 'remoteEntry.js',
+      filename: 'chartone.js',
       remotes: {
         store:'store'
       },

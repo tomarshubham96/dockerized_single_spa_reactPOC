@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://home:3001/',
+    publicPath: 'http://localhost:3001/',
     path: path.resolve(process.cwd(), 'dist')
   },
 

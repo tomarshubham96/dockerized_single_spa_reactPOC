@@ -14,7 +14,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://store:3009/'
+    publicPath: 'http://localhost:3009/'
   },
 
   resolve: {
@@ -41,7 +41,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'store',
       library: { type: 'var', name: 'store' },
-      filename: 'remoteEntry.js',
+      filename: 'store.js',
       remotes: {
       },
       exposes: {

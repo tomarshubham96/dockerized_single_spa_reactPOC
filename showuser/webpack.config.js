@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://showuser:3011/',
+    publicPath: 'http://localhost:3011/',
     path: path.resolve(process.cwd(), 'dist')
   },
 
@@ -43,7 +43,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'showuser',
       library: { type: 'var', name: 'showuser' },
-      filename: 'remoteEntry.js',
+      filename: 'show.js',
       remotes: {
         store: 'store'
       },

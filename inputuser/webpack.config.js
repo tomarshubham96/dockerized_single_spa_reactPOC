@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://inputuser:3010/',
+    publicPath: 'http://localhost:3010/',
     path: path.resolve(process.cwd(), 'dist')
   },
 
@@ -43,7 +43,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'inputuser',
       library: { type: 'var', name: 'inputuser' },
-      filename: 'remoteEntry.js',
+      filename: 'inputuser.js',
       remotes: {
         store:'store'
       },

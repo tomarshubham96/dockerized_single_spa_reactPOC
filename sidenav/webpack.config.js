@@ -15,7 +15,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'http://sidenav:3005/',
+    publicPath: 'http://localhost:3005/',
     path: path.resolve(process.cwd(), 'dist')
   },
 
@@ -47,7 +47,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'sidenav',
       library: { type: 'var', name: 'sidenav' },
-      filename: 'remoteEntry.js',
+      filename: 'sidenav.js',
       remotes: {
       },
       exposes: {
